@@ -81,7 +81,10 @@ const CartContainer = () => {
           <div className="w-full flex-1 bg-cartTotal rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Sub Total</p>
-              <p className="text-gray-400 text-lg">$ {tot}</p>
+              <p className="text-gray-400 text-lg">${
+                // FIXME: tot does not get recalculated if cart is shown
+                tot
+              }</p>
             </div>
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Delivery</p>
@@ -93,7 +96,10 @@ const CartContainer = () => {
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
-                ${tot + 2.5}
+                {
+                  // FIXME: tot does not get recalculated if cart is shown
+                  tot + 2.5
+                }
               </p>
             </div>
 
