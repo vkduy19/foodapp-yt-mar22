@@ -74,7 +74,8 @@ const CartContainer = () => {
                   setFlag={setFlag}
                   flag={flag}
                 />
-              ))}
+              ))
+            }
           </div>
 
           {/* cart total section */}
@@ -82,8 +83,12 @@ const CartContainer = () => {
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Sub Total</p>
               <p className="text-gray-400 text-lg">${
-                // FIXME: tot does not get recalculated if cart is shown
-                tot
+                cartItems.reduce(
+                  (accumulator, item) => {
+                    return accumulator + item.qty * item.price;
+                  },
+                  0
+                )
               }</p>
             </div>
             <div className="w-full flex items-center justify-between">
@@ -97,8 +102,12 @@ const CartContainer = () => {
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
                 {
-                  // FIXME: tot does not get recalculated if cart is shown
-                  tot + 2.5
+                  cartItems.reduce(
+                    (accumulator, item) => {
+                      return accumulator + item.qty * item.price;
+                    },
+                    0
+                  ) + 2.5
                 }
               </p>
             </div>

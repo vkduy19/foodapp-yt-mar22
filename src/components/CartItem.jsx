@@ -3,7 +3,6 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
-import { fetchCart } from "../utils/fetchLocalStorageData";
 let items = [];
 
 const CartItem = ({ item, setFlag, flag }) => {
@@ -18,6 +17,7 @@ const CartItem = ({ item, setFlag, flag }) => {
     });
   };
 
+  // FIXME: instance qty and item.qty conflicts
   const updateQty = (action, id) => {
     if (action == "add") {
       setQty(qty + 1);
@@ -63,7 +63,13 @@ const CartItem = ({ item, setFlag, flag }) => {
       <div className="flex flex-col gap-2">
         <p className="text-base text-gray-50">{item?.title}</p>
         <p className="text-sm block text-gray-300 font-semibold">
-          $ {parseFloat(item?.price) * qty}
+          $ {cartItems.map((elem) => {
+              if (elem.id === item?.id)
+              {
+                return parseFloat(elem.price) * elem.qty;
+              }
+            })
+          }
         </p>
       </div>
 
@@ -77,7 +83,13 @@ const CartItem = ({ item, setFlag, flag }) => {
         </motion.div>
 
         <p className="w-5 h-5 rounded-sm bg-cartBg text-gray-50 flex items-center justify-center">
-          {qty}
+          {cartItems.map((elem) => {
+              if (elem.id === item?.id)
+              {
+                return elem.qty;
+              }
+            })
+          }
         </p>
 
         <motion.div
