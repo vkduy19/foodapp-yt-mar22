@@ -65,13 +65,13 @@ const CartItem = ({ item, setFlag, flag }) => {
       <div className="flex flex-col gap-2">
         <p className="text-base text-gray-50">{item?.title}</p>
         <p className="text-sm block text-gray-300 font-semibold">
-          $ {cartItems.map((elem) => {
+          {cartItems.map((elem) => {
               if (elem.id === item?.id)
               {
                 return parseFloat(elem.price) * elem.qty;
               }
             })
-          }
+          } VND
         </p>
       </div>
 
