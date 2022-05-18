@@ -1,43 +1,43 @@
-import I1 from "../img/i1.png";
-import F1 from "../img/f1.png";
-import C3 from "../img/c3.png";
-import Fi1 from "../img/fi1.png";
+import ga from "../img/gaxoimo.png";
+import com from "../img/cavienchien.jpg";
+import trasua from "../img/trasua.jpg";
+import sto from "../img/sinhto.jpg";
 
 export const heroData = [
   {
     id: 1,
-    name: "Icecream",
-    decp: "Chocolate & vanilla",
-    price: "5.25",
-    imageSrc: I1,
+    name: "Cơm gà xối mỡ",
+    decp: "Cơm chiên gà xối mỡ",
+    price: "40.000",
+    imageSrc: ga,
   },
   {
     id: 2,
-    name: "Strawberries",
-    decp: "Fresh Strawberries",
-    price: "10.25",
-    imageSrc: F1,
+    name: "Cá viên chiên",
+    decp: "Cá viên chiên + Coca",
+    price: "60.000",
+    imageSrc: com,
   },
   {
     id: 3,
-    name: "Chicken Kebab",
-    decp: "Mixed Kebab Plate",
-    price: "8.25",
-    imageSrc: C3,
+    name: "Trà sữa",
+    decp: "Trà sữa trân châu",
+    price: "30.000",
+    imageSrc: trasua,
   },
   {
     id: 4,
-    name: "Fish Kebab",
-    decp: "Mixed Fish Kebab",
-    price: "5.25",
-    imageSrc: Fi1,
+    name: "Sinh tố ",
+    decp: "Sinh tố dâu xoài",
+    price: "25.000",
+    imageSrc: sto,
   },
 ];
 
 export const categories = [
   {
     id: 1,
-    name: "Chicken",
+    name: "Gà",
     urlParamName: "chicken",
   },
   {
@@ -47,28 +47,28 @@ export const categories = [
   },
   {
     id: 3,
-    name: "Rice",
+    name: "Cơm",
     urlParamName: "rice",
   },
   {
     id: 4,
-    name: "Fish",
+    name: "Cá",
     urlParamName: "fish",
   },
   {
     id: 5,
-    name: "Fruits",
+    name: "Trái Cây",
     urlParamName: "fruits",
   },
   {
     id: 6,
-    name: "Icecreams",
+    name: "Kem",
     urlParamName: "icecreams",
   },
 
   {
     id: 7,
-    name: "Soft Drinks",
+    name: "Thức uống",
     urlParamName: "drinks",
   },
 ];
