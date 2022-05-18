@@ -13,9 +13,20 @@ const RowContainer = ({ flag, data, scrollValue }) => {
   const [{ cartItems }, dispatch] = useStateValue();
 
   const addtocart = () => {
-    dispatch({
+    
+      dispatch({
       type: actionType.SET_CARTITEMS,
-      cartItems: items,
+      cartItems: items.reduce(
+        (acc, e) => {
+          if (acc.filter(elem => elem.id == e.id).length != 0) {
+            acc[acc.indexOf(e)].qty += 1
+          } else {
+            acc.push(e)
+          }
+          return acc;
+        },
+        new Array()
+      ),
     });
     localStorage.setItem("cartItems", JSON.stringify(items));
   };
@@ -56,8 +67,10 @@ const RowContainer = ({ flag, data, scrollValue }) => {
               </motion.div>
               <motion.div
                 whileTap={{ scale: 0.75 }}
-                className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
-                onClick={() => setItems([...cartItems, item])}
+                className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
+                onClick={() => {
+                  setItems([...cartItems, item])
+                }}
               >
                 <MdShoppingBasket className="text-white" />
               </motion.div>

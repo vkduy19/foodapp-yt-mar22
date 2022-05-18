@@ -24,6 +24,7 @@ const CartContainer = () => {
     let totalPrice = cartItems.reduce(function (accumulator, item) {
       return accumulator + item.qty * item.price;
     }, 0);
+
     setTot(totalPrice);
     console.log(tot);
   }, [tot, flag]);
@@ -74,14 +75,22 @@ const CartContainer = () => {
                   setFlag={setFlag}
                   flag={flag}
                 />
-              ))}
+              ))
+            }
           </div>
 
           {/* cart total section */}
           <div className="w-full flex-1 bg-cartTotal rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Sub Total</p>
-              <p className="text-gray-400 text-lg">{tot} VND</p>
+              <p className="text-gray-400 text-lg">{
+                cartItems.reduce(
+                  (accumulator, item) => {
+                    return accumulator + item.qty * item.price;
+                  },
+                  0
+                )
+              } VND</p>
             </div>
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Delivery</p>
@@ -93,7 +102,14 @@ const CartContainer = () => {
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
-                {tot + 2.5} VND
+                {
+                  cartItems.reduce(
+                    (accumulator, item) => {
+                      return accumulator + item.qty * item.price;
+                    },
+                    0
+                  ) + 2.5
+                } VND
               </p>
             </div>
 
