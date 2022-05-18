@@ -17,7 +17,6 @@ const CartItem = ({ item, setFlag, flag }) => {
     });
   };
 
-  // FIXME: instance qty and item.qty conflicts
   const updateQty = (action, id) => {
     if (action == "add") {
       cartItems.map((item) => {
