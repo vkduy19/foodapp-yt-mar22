@@ -13,17 +13,16 @@ const RowContainer = ({ flag, data, scrollValue }) => {
   const [{ cartItems }, dispatch] = useStateValue();
 
   const addtocart = () => {
-    
-      dispatch({
+    dispatch({
       type: actionType.SET_CARTITEMS,
       cartItems: items.reduce(
-        (acc, e) => {
-          if (acc.filter(elem => elem.id == e.id).length != 0) {
-            acc[acc.indexOf(e)].qty += 1
+        (accumulator, item) => {
+          if (accumulator.filter(elem => elem.id == item.id).length == 1) {
+            accumulator.filter(elem => elem.id == item.id).forEach(elem => elem.qty += 1)
           } else {
-            acc.push(e)
+            accumulator.push(item)
           }
-          return acc;
+          return accumulator;
         },
         new Array()
       ),
@@ -69,7 +68,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
                 whileTap={{ scale: 0.75 }}
                 className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
                 onClick={() => {
-                  setItems([...cartItems, item])
+                  setItems([...cartItems, JSON.parse(JSON.stringify(item))])
                 }}
               >
                 <MdShoppingBasket className="text-white" />
