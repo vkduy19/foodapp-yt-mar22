@@ -68,7 +68,9 @@ const Header = () => {
             className="flex items-center gap-24 "
           >
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              Home
+              <Link to={"/*"}>
+                Home
+              </Link>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               Menu
@@ -77,7 +79,9 @@ const Header = () => {
               About Us
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              Service
+              <Link to={"/contact"}>
+                Contact
+              </Link>
             </li>
           </motion.ul>
 
