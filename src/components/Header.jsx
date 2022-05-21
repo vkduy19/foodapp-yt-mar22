@@ -52,9 +52,9 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary">
+    <header className="fixed z-50 w-screen p-3 px-4 lg:p-6 lg:px-16 bg-primary">
       {/* desktop & tablet */}
-      <div className="hidden md:flex w-full h-full items-center justify-between">
+      <div className="hidden lg:flex w-full h-full items-center justify-between">
         <Link to={"/"} className="flex items-center gap-2">
           <img src={Logo} className="w-8 object-cover" alt="logo" />
           <p className="text-headingColor text-xl font-bold"> Pulu Pulu Pulu</p>
@@ -69,15 +69,15 @@ const Header = () => {
           >
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               <Link to={"/*"}>
-                Home
+                Trang chủ
               </Link>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              About Us
+              Về chúng tôi
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               <Link to={"/contact"}>
-                Contact
+                Liên hệ
               </Link>
             </li>
           </motion.ul>
@@ -135,7 +135,7 @@ const Header = () => {
       </div>
 
       {/* mobile */}
-      <div className="flex items-center justify-between md:hidden w-full h-full ">
+      <div className="flex items-center justify-between lg:hidden w-full h-full ">
         <div
           className="relative flex items-center justify-center"
           onClick={showCart}
@@ -152,7 +152,7 @@ const Header = () => {
 
         <Link to={"/"} className="flex items-center gap-2">
           <img src={Logo} className="w-8 object-cover" alt="logo" />
-          <p className="text-headingColor text-xl font-bold"> City</p>
+          <p className="text-headingColor text-xl font-bold">Pulu Pulu Pulu</p>
         </Link>
 
         <div className="relative">
