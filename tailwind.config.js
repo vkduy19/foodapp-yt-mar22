@@ -56,6 +56,9 @@ module.exports = {
         cartTotal: "#343739",
       },
     },
+    container: {
+      padding: '4rem',
+    },
   },
   plugins: [require("tailwind-scrollbar")],
 };
