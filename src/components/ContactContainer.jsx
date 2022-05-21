@@ -3,7 +3,7 @@ import React from "react";
 const ContactContainer = () => {
   return (
     <div>
-      <p className="w-screen max-w-lg lg:max-w-2xl mx-auto mt-5 mb-10 text-[2rem] lg:text-[3rem] font-bold tracking-wide text-headingColor">
+      <p className="w-full max-w-lg lg:max-w-2xl mx-auto lg:p-0 px-3 mt-5 mb-10 text-[1.75rem] lg:text-[3rem] font-bold tracking-wide text-headingColor">
         <span className="text-blue-600">Cần hỗ trợ?</span><br/>
         Hãy liên hệ với chúng tôi qua đơn bên dưới.
       </p>
