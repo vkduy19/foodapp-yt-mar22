@@ -13,21 +13,25 @@ const RowContainer = ({ flag, data, scrollValue }) => {
   const [{ cartItems }, dispatch] = useStateValue();
 
   const addtocart = () => {
+    const tmpItems = items.reduce(
+      (accumulator, nextItem) => {
+        if (accumulator.filter(item => item.id == nextItem.id).length == 1) {
+          accumulator.filter(elem => elem.id == nextItem.id).forEach(elem => elem.qty += 1);
+        } else {
+          let newLen = accumulator.push(nextItem);
+          accumulator[newLen - 1].qty = (accumulator[newLen - 1].qty || 1);
+        }
+        return accumulator;
+      },
+      new Array()
+    );
+
     dispatch({
       type: actionType.SET_CARTITEMS,
-      cartItems: items.reduce(
-        (accumulator, item) => {
-          if (accumulator.filter(elem => elem.id == item.id).length == 1) {
-            accumulator.filter(elem => elem.id == item.id).forEach(elem => elem.qty += 1)
-          } else {
-            accumulator.push(item)
-          }
-          return accumulator;
-        },
-        new Array()
-      ),
+      cartItems: tmpItems,
     });
-    localStorage.setItem("cartItems", JSON.stringify(items));
+    
+    localStorage.setItem("cartItems", JSON.stringify(tmpItems));
   };
 
   useEffect(() => {
