@@ -94,7 +94,7 @@ const CartContainer = () => {
             </div>
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Delivery</p>
-              <p className="text-gray-400 text-lg">2.5 VND</p>
+              <p className="text-gray-400 text-lg">15000 VND</p>
             </div>
 
             <div className="w-full border-b border-gray-600 my-2"></div>
@@ -108,7 +108,7 @@ const CartContainer = () => {
                       return accumulator + item.qty * item.price;
                     },
                     0
-                  ) + 2.5
+                  ) + 15000
                 } VND
               </p>
             </div>
