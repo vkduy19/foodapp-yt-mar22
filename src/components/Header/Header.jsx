@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../../firebase.config";
 
-import Logo from "../../img/logo1.jpg";
+import Logo from "../../img/logo.jpg";
 import Avatar from "../../img/default-avatar.png";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../context/StateProvider";
