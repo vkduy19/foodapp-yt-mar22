@@ -1,10 +1,10 @@
 export { default as Header } from "./Header/Header";
-export { default as MainContainer } from "./Home/MainContainer";
-export { default as HomeContainer } from "./Home/HomeContainer";
+export { default as MainContainer } from "./HomePage/MainContainer";
+export { default as HomeContainer } from "./HomePage/HomeContainer";
 export { default as Loader } from "./Loader/Loader";
-export { default as RowContainer } from "./Home/RowContainer";
-export { default as MenuContainer } from "./Home/MenuContainer";
+export { default as RowContainer } from "./HomePage/RowContainer";
+export { default as MenuContainer } from "./HomePage/MenuContainer";
 export { default as CartContainer } from "./Cart/CartContainer";
 export { default as CartItem } from "./Cart/CartItem";
 export { default as AboutUs} from "./AboutUsPage/AboutUs";
-export { default as Contact } from "./Contact/Contact";
+export { default as Contact } from "./ContactPage/Contact";
